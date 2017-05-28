@@ -66,6 +66,7 @@ public class MyFirstPortlet extends MVCPortlet {
 		String message = "Formulaire Alloy";
 		LOG.trace(String.format("%s formSentWithAlloy() -> %s", LOG_HEADER, message));
 		LOG.trace(String.format("%s Texte du formulaire Alloy -> %s", LOG_HEADER, request.getParameter("field2")));
+		// Ne pas utiliser super.processAction(request, response) lorsque la méthode est annoté avec `@ProcessAction`
 	}
 
 	@Override
