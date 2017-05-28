@@ -28,7 +28,7 @@ public class MyFirstPortlet extends MVCPortlet {
 	private static final String LOG_HEADER = "[MY-FIRST-PORTLET]";
 
 	@Override
-	public void init(PortletConfig config) throws PortletException {
+	public void init (PortletConfig config) throws PortletException {
 		String message = "Cette méthode est exécutée à l'initialisation de la Portlet dans Liferay";
 		LOG.trace(String.format("%s init() -> %s", LOG_HEADER, message));
 		super.init(config);
@@ -56,7 +56,16 @@ public class MyFirstPortlet extends MVCPortlet {
 		throws PortletException, java.io.IOException {
 		String message = "Cette méthode est exécutée lors de la réception d'un formulaire";
 		LOG.trace(String.format("%s processAction() -> %s", LOG_HEADER, message));
+		LOG.trace(String.format("%s Texte du formulaire -> %s", LOG_HEADER, request.getParameter("field1")));
 		super.processAction(request, response);
+	}
+
+	@ProcessAction(name = "formSentWithAlloy")
+	public void formSentWithAlloy (ActionRequest request, ActionResponse response)
+			throws PortletException, java.io.IOException {
+		String message = "Formulaire Alloy";
+		LOG.trace(String.format("%s formSentWithAlloy() -> %s", LOG_HEADER, message));
+		LOG.trace(String.format("%s Texte du formulaire Alloy -> %s", LOG_HEADER, request.getParameter("field2")));
 	}
 
 	@Override
