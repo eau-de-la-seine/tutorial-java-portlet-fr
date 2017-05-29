@@ -23,7 +23,6 @@
 <hr />
 <hr />
 
-
 <%-- Formulaires --%>
 <p>
 	Deux formulaires basiques :
@@ -32,7 +31,7 @@
 <portlet:actionURL name="processAction" var="processAction" />
 <portlet:actionURL name="formSentWithAlloy" var="formSentWithAlloy" />
 
-<%-- processAction() | Formulaire --%>
+<%-- processAction() | Formulaire HTML --%>
 <form method="post" action="<%= processAction %>">
 	<label for="field1">Texte du formulaire : </label>
 	<input id="field1" name="<portlet:namespace/>field1" type="text" />
@@ -41,7 +40,7 @@
 
 <hr />
 
-<%-- processAction() | Formulaire envoyé avec Alloy --%>
+<%-- processAction() | Formulaire Alloy UI --%>
 <aui:form method="post" action="<%= formSentWithAlloy %>">
 	<aui:input name="field2" label="Texte du formulaire Alloy : " />
 	<aui:button type="submit" value="Envoyer formulaire vers `formSentWithAlloy()`" />
