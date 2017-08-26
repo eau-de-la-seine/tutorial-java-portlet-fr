@@ -29,7 +29,7 @@ public class MyFirstPortlet extends MVCPortlet {
 
 	@Override
 	public void init (PortletConfig config) throws PortletException {
-		String message = "Cette méthode est exécutée à l'initialisation de la Portlet dans Liferay";
+		String message = "Cette méthode est exécutée à l'initialisation du portlet dans Liferay";
 		LOG.trace(String.format("%s init() -> %s", LOG_HEADER, message));
 		super.init(config);
 	}
@@ -71,7 +71,7 @@ public class MyFirstPortlet extends MVCPortlet {
 
 	@Override
 	public void destroy () {
-		String message = "Cette méthode est exécutée lors de la désinstallation de la Portlet de Liferay";
+		String message = "Cette méthode est exécutée lors de la désinstallation du portlet de Liferay";
 		LOG.trace(String.format("%s destroy() -> %s", LOG_HEADER, message));
 		super.destroy();
 	}
